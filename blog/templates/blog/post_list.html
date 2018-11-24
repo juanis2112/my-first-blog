@@ -7,14 +7,13 @@
 <h1><a href="">Nita's Blog</a></h1>
 </div>
 <div>
-<p>published: 14.06.2014, 12:14</p>
-<h2><a href="">Esto es una prueba</a></h2>
-<p>Hola mama pollo, ahora si pude crear mi pagina web y estoy haciendo cosas chistositas en ella XDXD</p>
-</div>
+{% for post in posts %}
 <div>
-<p>published: 14.06.2014, 12:14</p>
-<h2><a href="">Me gusta el naranja</a></h2>
-<p>Me gusta el naranja porque es lindo lindo.</p>
+<p>published: {{ post.published_date }}</p>
+<h1><a href="">{{ post.title }}</a></h1>
+<p>{{ post.text|linebreaksbr }}</p>
+</div>
+{% endfor %}
 </div>
 </body>
 </html>
